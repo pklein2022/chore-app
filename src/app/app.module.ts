@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { ChoreFormComponent } from './chore-form/chore-form.component';
 import { ChoreListComponent } from './chore-list/chore-list.component';
 import { CompletedListComponent } from './completed-list/completed-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CompletedListComponent } from './completed-list/completed-list.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
