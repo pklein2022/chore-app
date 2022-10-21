@@ -4,18 +4,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { ChoreFormComponent } from './chore-form/chore-form.component';
-import { ChoreListComponent } from './chore-list/chore-list.component';
 import { CompletedListComponent } from './completed-list/completed-list.component';
 import { FormsModule } from '@angular/forms';
+import { ChoresComponent } from './chores/chores.component';
+import { ChoreDetailComponent } from './chores/chore-detail/chore-detail.component';
+import { ChoreEditComponent } from './chores/chore-edit/chore-edit.component';
+import { ChoreListComponent } from './chores/chore-list/chore-list.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ChoreFormComponent,
+    CompletedListComponent,
+    ChoresComponent,
+    ChoreDetailComponent,
+    ChoreEditComponent,
     ChoreListComponent,
-    CompletedListComponent
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
