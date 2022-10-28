@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { flush } from '@angular/core/testing';
 import { RouterModule, Routes } from '@angular/router';
 import { ChildComponent } from './child/child.component';
 import { ChoreDetailComponent } from './chores/chore-detail/chore-detail.component';
@@ -7,7 +8,7 @@ import { CompletedListComponent } from './completed-list/completed-list.componen
 import { ParentComponent } from './parent/parent.component';
 
 const routes: Routes = [
-  { path: '', component: ChoreDetailComponent },
+  { path: '', component: ChoreDetailComponent, pathMatch: 'full' },
   { path: 'chore-list', component: ChoreListComponent },
   { path: 'parent', component: ParentComponent },
   { path: 'child', component: ChildComponent },
