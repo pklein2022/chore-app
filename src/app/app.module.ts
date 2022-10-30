@@ -5,13 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { CompletedListComponent } from './completed-list/completed-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChoresComponent } from './chores/chores.component';
 import { ChoreDetailComponent } from './chores/chore-detail/chore-detail.component';
 import { ChoreEditComponent } from './chores/chore-edit/chore-edit.component';
 import { ChoreListComponent } from './chores/chore-list/chore-list.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { ChoreService } from './chores/chore.service';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,11 @@ import { ChildComponent } from './child/child.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+
   ],
-  providers: [],
+  providers: [ChoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

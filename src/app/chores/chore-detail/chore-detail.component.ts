@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Chore } from '../chore.model';
 import { ChoreService } from '../chore.service';
 
 @Component({
@@ -7,21 +9,19 @@ import { ChoreService } from '../chore.service';
   styleUrls: ['./chore-detail.component.css']
 })
 export class ChoreDetailComponent implements OnInit {
+  chore: Chore;
+  id: number;
 
-  constructor(private choreService: ChoreService) { }
+  constructor(private choreService: ChoreService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.id = +params['id'];
+          this.chore = this.choreService.getChore(this.id);
+        }
+      )
   }
 
-  onSubmitForm(choreDetailFormObj){
-    console.log(choreDetailFormObj);
-    const choreName = choreDetailFormObj.value.choreName;
-    const description = choreDetailFormObj.value.description;
-    const imagePath = choreDetailFormObj.value.imagePath;
-    const dueDate = choreDetailFormObj.value.dueDate;
-    const amount = choreDetailFormObj.value.amount;
-
-    this.choreService.addChore(choreName, description, imagePath, dueDate, amount);
-
-  }
 }

@@ -1,1 +1,55 @@
 <p>chore-edit works!</p>
+<h1>Chore Form</h1>
+<form [formGroup]="choreForm" (ngSubmit)="onSubmitForm()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Chore Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="choreName"
+      formControlName="choreName"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description of chore</label>
+    <input
+      type="text"
+      class="form-control"
+      id="description"
+      formControlName="description"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="imagePath" class="form-label">Image</label>
+    <input
+      type="text"
+      class="form-control"
+      id="imagePath"
+      formControlName="imagePath"
+    />
+  </div>
+  <div class="w-25 mb-3 padding-bottom-3">
+    <label for="dueDate" class="form-label">Due Date</label>
+    <input
+      type="text"
+      class="form-control"
+      id="dueDate"
+      formControlName="dueDate"
+    />
+  </div>
+  <div class="w-25 mb-3 pading-bottom-3">
+    <label for="amount" class="form-label">Amount to earn</label>
+    <input
+      type="text"
+      class="form-control"
+      id="amount"
+      formControlName="amount"
+    />
+  </div>
+
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary">
+      {{ editMode ? "Update" : "Add" }}
+    </button>
+  </div>
+</form>

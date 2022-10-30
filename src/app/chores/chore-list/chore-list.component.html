@@ -1,22 +1,49 @@
 <h1>Chore List</h1>
-<div class="card mb-3" style="max-width: 800px" *ngFor="let chore of chores">
+<div
+  class="card mb-3"
+  style="max-width: 100%"
+  *ngFor="let chore of chores; let i = index"
+>
   <div class="row g-0">
-    <div class="col-md-4" >
+    <div class="col-md-4">
       <img
         [src]="chore.imagePath"
         id="imagePath"
         class="img-fluid rounded-start"
         alt="..."
       />
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title" id="choreName">{{ chore.choreName }}</h5>
-          <p class="card-text" id="description">{{ chore.description }}</p>
-          <p class="card-text" id="dueDate">{{ chore.dueDate }}</p>
-          <p class="card-text">
-            <small class="text-muted">{{ chore.amount }} </small>
-          </p>
-        </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title" id="choreName">{{ chore.choreName }}</h5>
+        <p class="card-text" id="description">{{ chore.description }}</p>
+        <p class="card-text" id="dueDate">{{ chore.dueDate }}</p>
+        <p class="card-text">
+          <small class="text-muted">{{ chore.amount }} </small>
+        </p>
+        <p>
+          <button
+            type="button"
+            class="btn btn-primary m-1"
+            routerLink="{{ i }}"
+          >
+            View
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary m-1"
+            routerLink="{{ i }}/edit"
+          >
+            Edit
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary m-1"
+            (click)="onDeleteChore(i)"
+          >
+            Delete
+          </button>
+        </p>
       </div>
     </div>
   </div>
