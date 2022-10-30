@@ -10,7 +10,7 @@ export class ChoreService {
     new Chore(
       "Homework",
       "Complete homework as soon as you get home from school.",
-      "assets/Images/homework.jpg",
+      "assets/images/homework.jpg",
       "Today",
       0.00,
     )
