@@ -13,12 +13,32 @@ export class ChoreService {
       "assets/images/homework.jpg",
       "Today",
       0.00,
+      ""
+    ),
+    new Chore(
+      "Dishes",
+      "Empty dishwasher and load any dirty dishes.",
+      "assets/images/dishes.jpg",
+      "Daily",
+      0.00,
+      "10/10/2022"
     )
   ]
   constructor() { }
 
   getChores() {
-    return this.chores.slice();
+    return this.chores.filter(this.checkNotCompleted);
+  }
+  checkNotCompleted(chore: Chore) {
+    return chore.completedDate === '';
+  }
+
+  getCompletedChores() {
+    return this.chores.filter(this.checkCompleted);
+  }
+
+  checkCompleted(chore: Chore){
+    return chore.completedDate !== '';
   }
 
   getChore(index: number) {
@@ -37,6 +57,12 @@ export class ChoreService {
 
   deleteChore(index: number) {
     this.chores.splice(index, 1);
+    this.choresChanged.next(this.chores.slice());
+  }
+
+  completeChore(index: number) {
+    let date = new Date().toLocaleDateString();
+    this.chores[index].completedDate = date;
     this.choresChanged.next(this.chores.slice());
   }
 }

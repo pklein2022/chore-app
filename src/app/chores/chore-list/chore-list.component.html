@@ -1,4 +1,4 @@
-<h1>Chore List</h1>
+<h1>{{ completedMode ? "Completed Chores" : "Chore List" }}</h1>
 <div
   class="card mb-3"
   style="max-width: 100%"
@@ -17,7 +17,21 @@
       <div class="card-body">
         <h5 class="card-title" id="choreName">{{ chore.choreName }}</h5>
         <p class="card-text" id="description">{{ chore.description }}</p>
-        <p class="card-text" id="dueDate">{{ chore.dueDate }}</p>
+        <p class="card-text" id="dueDate">Due: {{ chore.dueDate }}</p>
+        <p
+          class="card-text"
+          id="completedDate"
+          *ngIf="chore.completedDate !== ''"
+        >
+          Completed on: {{ chore.completedDate }}
+        </p>
+        <p
+          class="card-text"
+          id="completedDate"
+          *ngIf="chore.completedDate === ''"
+        >
+          Not completed
+        </p>
         <p class="card-text">
           <small class="text-muted">{{ chore.amount }} </small>
         </p>
@@ -42,6 +56,14 @@
             (click)="onDeleteChore(i)"
           >
             Delete
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary m-1"
+            (click)="onComplete(i)"
+            *ngIf="completedMode === false"
+          >
+            Completed
           </button>
         </p>
       </div>

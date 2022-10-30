@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'chores/:id/edit', component: ChoreEditComponent },
   { path: 'parent', component: ParentComponent },
   { path: 'child', component: ChildComponent },
-  { path: 'completed-list', component: CompletedListComponent },
+  { path: 'completed-chores', component: ChoreListComponent },
 
 ];
 
