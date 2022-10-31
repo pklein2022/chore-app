@@ -41,6 +41,7 @@ export class ChoreEditComponent implements OnInit {
     let choreImagePath = '';
     let choreDueDate = '';
     let choreAmount = 0;
+    let choreCompletedDate = '';
 
     if (this.editMode) {
       const chore = this.choreService.getChore(this.id);
@@ -49,6 +50,7 @@ export class ChoreEditComponent implements OnInit {
       choreImagePath = chore.imagePath;
       choreDueDate = chore.dueDate;
       choreAmount = chore.amount;
+      choreCompletedDate = chore.completedDate;
     }
 
     this.choreForm = new FormGroup({
@@ -57,9 +59,8 @@ export class ChoreEditComponent implements OnInit {
       'imagePath': new FormControl(choreImagePath, Validators.required),
       'dueDate': new FormControl(choreDueDate, Validators.required),
       'amount': new FormControl(choreAmount, Validators.required),
+      'completedDate': new FormControl(choreCompletedDate),
     })
   }
-
-
 
 }

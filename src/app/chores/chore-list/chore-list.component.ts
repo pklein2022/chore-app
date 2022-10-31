@@ -22,7 +22,7 @@ export class ChoreListComponent implements OnInit {
     if (this.completedMode) {
       this.chores = this.choreService.getCompletedChores();
     } else {
-      this.chores = this.choreService.getChores();
+      this.chores = this.choreService.getNotCompletedChores();
     }
   }
 
@@ -32,7 +32,7 @@ export class ChoreListComponent implements OnInit {
     if (this.completedMode) {
       this.chores = this.choreService.getCompletedChores();
     } else {
-      this.chores = this.choreService.getChores();
+      this.chores = this.choreService.getNotCompletedChores();
     }
   }
 
@@ -41,7 +41,7 @@ export class ChoreListComponent implements OnInit {
     if (this.completedMode) {
       this.chores = this.choreService.getCompletedChores();
     } else {
-      this.chores = this.choreService.getChores();
+      this.chores = this.choreService.getNotCompletedChores();
     }
   }
 }
