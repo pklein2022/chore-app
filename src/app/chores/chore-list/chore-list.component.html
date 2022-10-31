@@ -39,28 +39,28 @@
           <button
             type="button"
             class="btn btn-primary m-1"
-            routerLink="{{ i }}"
+            routerLink="{{ chore.id }}"
           >
             View
           </button>
           <button
             type="button"
             class="btn btn-primary m-1"
-            routerLink="{{ i }}/edit"
+            routerLink="{{ chore.id }}/edit"
           >
             Edit
           </button>
           <button
             type="button"
             class="btn btn-primary m-1"
-            (click)="onDeleteChore(i)"
+            (click)="onDeleteChore(chore.id)"
           >
             Delete
           </button>
           <button
             type="button"
             class="btn btn-primary m-1"
-            (click)="onComplete(i)"
+            (click)="onComplete(chore.id)"
             *ngIf="completedMode === false"
           >
             Completed

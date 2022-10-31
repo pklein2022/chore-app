@@ -12,8 +12,4 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  onFetchData() {
-    this.dataStorageService.fetchChores();
-  }
 }

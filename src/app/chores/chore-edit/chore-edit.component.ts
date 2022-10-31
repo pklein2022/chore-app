@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { ChoreService } from '../chore.service';
 
 @Component({
@@ -13,7 +14,12 @@ export class ChoreEditComponent implements OnInit {
   editMode = false;
   choreForm: FormGroup;
 
-  constructor(private choreService: ChoreService, private route: ActivatedRoute, private router: Router) { }
+  constructor(
+    private choreService: ChoreService,
+    private dataStorageService: DataStorageService,
+    private route: ActivatedRoute,
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
     this.route.params
@@ -32,6 +38,8 @@ export class ChoreEditComponent implements OnInit {
     } else {
       this.choreService.addChore(this.choreForm.value);
     }
+    this.dataStorageService.storeChores();
+    this.dataStorageService.fetchChores();
     this.router.navigate(['/chores']);
   }
 

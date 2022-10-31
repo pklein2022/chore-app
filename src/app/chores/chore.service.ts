@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
-import { DataStorageService } from "../shared/data-storage.service";
 import { Chore } from "./chore.model";
 
 @Injectable({ providedIn: 'root' })
@@ -26,9 +25,9 @@ export class ChoreService {
     // )
   ]
 
-  // constructor(private dataStorageService: DataStorageService) { }
+  constructor() { }
 
-  setChores(chores: Chore[]){
+  setChores(chores: Chore[]) {
     this.chores = chores;
     this.choresChanged.next(this.chores.slice());
   }
@@ -49,7 +48,7 @@ export class ChoreService {
     return this.chores.filter(this.checkCompleted);
   }
 
-  checkCompleted(chore: Chore){
+  checkCompleted(chore: Chore) {
     return chore.completedDate !== '';
   }
 
@@ -60,26 +59,22 @@ export class ChoreService {
   addChore(chore: Chore) {
     this.chores.push(chore);
     this.choresChanged.next(this.chores.slice());
-    // this.dataStorageService.storeChores();
   }
 
   updateChore(index: number, newChore: Chore) {
     this.chores[index] = newChore;
     this.choresChanged.next(this.chores.slice());
-    // this.dataStorageService.storeChores();
   }
 
   deleteChore(index: number) {
     this.chores.splice(index, 1);
     this.choresChanged.next(this.chores.slice());
-    // this.dataStorageService.storeChores();
   }
 
   completeChore(index: number) {
     let date = new Date().toLocaleDateString();
     this.chores[index].completedDate = date;
     this.choresChanged.next(this.chores.slice());
-    // this.dataStorageService.storeChores();
     console.log(this.chores);
   }
 }
