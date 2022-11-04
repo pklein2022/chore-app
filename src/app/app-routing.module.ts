@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthComponent } from './auth/auth.component';
 import { ChildComponent } from './child/child.component';
 import { ChoresResolverService } from './chores-resolver.service';
 import { ChoreDetailComponent } from './chores/chore-detail/chore-detail.component';
@@ -9,7 +10,7 @@ import { CompletedListComponent } from './completed-list/completed-list.componen
 import { ParentComponent } from './parent/parent.component';
 
 const routes: Routes = [
-  { path: '', component: ParentComponent, pathMatch: 'full' },
+  { path: '', component: AuthComponent, pathMatch: 'full' },
   { path: 'chores', component: ChoreListComponent, resolve: [ChoresResolverService] },
   { path: 'chores/new', component: ChoreEditComponent },
   { path: 'chores/:id', component: ChoreDetailComponent, resolve: [ChoresResolverService] },

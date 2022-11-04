@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,12 @@ import { ChoreListComponent } from './chores/chore-list/chore-list.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { ChoreService } from './chores/chore.service';
+import { AuthService } from './auth/auth.service';
+import { AuthInterceptorService } from './auth/auth.interceptor.service';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { AlertComponent } from './shared/alert/alert/alert.component';
+import { PlaceHolderDirective } from './shared/placeholder/placeholder.directive';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +31,11 @@ import { ChoreService } from './chores/chore.service';
     ChoreEditComponent,
     ChoreListComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    AuthComponent,
+    LoadingSpinnerComponent,
+    AlertComponent,
+    PlaceHolderDirective,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +45,14 @@ import { ChoreService } from './chores/chore.service';
     HttpClientModule,
 
   ],
-  providers: [ChoreService],
+  providers: [ChoreService, AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }],
+
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
