@@ -50,6 +50,7 @@ export class ChoreEditComponent implements OnInit {
     let choreDueDate = '';
     let choreAmount = 0;
     let choreCompletedDate = '';
+    let choreId = -1;
 
     if (this.editMode) {
       const chore = this.choreService.getChore(this.id);
@@ -59,6 +60,7 @@ export class ChoreEditComponent implements OnInit {
       choreDueDate = chore.dueDate;
       choreAmount = chore.amount;
       choreCompletedDate = chore.completedDate;
+      choreId = chore.id;
     }
 
     this.choreForm = new FormGroup({
@@ -68,6 +70,7 @@ export class ChoreEditComponent implements OnInit {
       'dueDate': new FormControl(choreDueDate, Validators.required),
       'amount': new FormControl(choreAmount, Validators.required),
       'completedDate': new FormControl(choreCompletedDate),
+      'id': new FormControl(choreId),
     })
   }
 
