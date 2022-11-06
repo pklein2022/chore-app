@@ -6,6 +6,7 @@ import { Observable, Subscription } from "rxjs";
 import { AuthResponseData, AuthService } from "./auth.service";
 import { AlertComponent } from "../shared/alert/alert/alert.component";
 import { PlaceHolderDirective } from "../shared/placeholder/placeholder.directive";
+import { DataStorageService } from "../shared/data-storage.service";
 
 @Component({
   selector: 'app-auth',
@@ -20,7 +21,7 @@ export class AuthComponent implements OnDestroy {
 
   private closeSub: Subscription;
 
-  constructor(private authService: AuthService, private router: Router, private componentFactoryResolver: ComponentFactoryResolver) { }
+  constructor(private authService: AuthService, private router: Router, private dataStorageService: DataStorageService, private componentFactoryResolver: ComponentFactoryResolver) { }
 
   onSwitchMode() {
     this.isLoginMode = !this.isLoginMode;
@@ -46,6 +47,7 @@ export class AuthComponent implements OnDestroy {
       resData => {
         console.log(resData);
         this.isLoading = false;
+        this.dataStorageService.fetchChores().subscribe();
         this.router.navigate(['/parent']);
       },
       errorMessage => {
