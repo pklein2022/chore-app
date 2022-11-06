@@ -5,7 +5,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { CompletedListComponent } from './completed-list/completed-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChoresComponent } from './chores/chores.component';
 import { ChoreDetailComponent } from './chores/chore-detail/chore-detail.component';
@@ -25,7 +24,6 @@ import { AuthComponent } from './auth/auth.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    CompletedListComponent,
     ChoresComponent,
     ChoreDetailComponent,
     ChoreEditComponent,

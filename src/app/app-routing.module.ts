@@ -6,7 +6,6 @@ import { ChoresResolverService } from './chores-resolver.service';
 import { ChoreDetailComponent } from './chores/chore-detail/chore-detail.component';
 import { ChoreEditComponent } from './chores/chore-edit/chore-edit.component';
 import { ChoreListComponent } from './chores/chore-list/chore-list.component';
-import { CompletedListComponent } from './completed-list/completed-list.component';
 import { ParentComponent } from './parent/parent.component';
 
 const routes: Routes = [
