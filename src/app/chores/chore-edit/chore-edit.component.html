@@ -37,16 +37,14 @@
       formControlName="dueDate"
     />
   </div>
-  <div class="w-25 mb-3 pading-bottom-3">
-    <label for="amount" class="form-label">Amount to earn</label>
-    <input
-      type="text"
-      class="form-control"
-      id="amount"
-      formControlName="amount"
-    />
-  </div>
 
+<div class= "w-25 input-group mb-3">
+  <span class="input-group-text">$</span>
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
+  id="amount"
+  formControlName="amount">
+  <span class="input-group-text">.00</span>
+</div>
   <div class="col-auto">
     <button type="submit" class="btn btn-primary">
       {{ editMode ? "Update" : "Add" }}
