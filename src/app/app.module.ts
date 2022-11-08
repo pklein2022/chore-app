@@ -19,6 +19,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { AlertComponent } from './shared/alert/alert/alert.component';
 import { PlaceHolderDirective } from './shared/placeholder/placeholder.directive';
 import { AuthComponent } from './auth/auth.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AuthComponent } from './auth/auth.component';
     LoadingSpinnerComponent,
     AlertComponent,
     PlaceHolderDirective,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

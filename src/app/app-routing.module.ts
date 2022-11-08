@@ -6,10 +6,11 @@ import { ChoresResolverService } from './chores-resolver.service';
 import { ChoreDetailComponent } from './chores/chore-detail/chore-detail.component';
 import { ChoreEditComponent } from './chores/chore-edit/chore-edit.component';
 import { ChoreListComponent } from './chores/chore-list/chore-list.component';
+import { HomeComponent } from './home/home.component';
 import { ParentComponent } from './parent/parent.component';
 
 const routes: Routes = [
-  { path: '', component: AuthComponent, pathMatch: 'full' },
+  { path: '', component: HomeComponent , pathMatch: 'full' },
   { path: 'chores', component: ChoreListComponent, resolve: [ChoresResolverService] },
   { path: 'chores/new', component: ChoreEditComponent },
   { path: 'chores/:id', component: ChoreDetailComponent, resolve: [ChoresResolverService] },
