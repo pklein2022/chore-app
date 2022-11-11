@@ -21,4 +21,5 @@ export class ParentComponent implements OnInit {
     this.dataStorageService.fetchChores().subscribe();
   }
 
+ 
 }

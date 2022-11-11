@@ -5,53 +5,6 @@
 <button type="button" class="btn btn-primary m-1" (click)="onSaveData()">
   Save Data
 </button>
-<!-- <button type="button" class="btn btn-primary m-1" (click)="onFetchData()">
-  Fetch Data
-</button> -->
-<button type="button" class="btn btn-primary m-1" (click)="onSaveData()">
-  Add Child
+<button type="button" class="btn btn-primary m-1" routerLink="/users/new">
+  Add User
 </button>
-<div class="container-md mt-5 mb-5">
-  <h3>Fill out the below form to add a child.</h3>
-</div>
-<form #authForm="ngForm">
-  <div class="form-group">
-    <label for="email">E-Mail</label>
-    <input
-      type="email"
-      id="email"
-      class="form-control"
-      ngModel
-      name="email"
-      required
-      email
-    />
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input
-      type="password"
-      id="password"
-      class="form-control"
-      ngModel
-      name="password"
-      required
-      minlength="6"
-    />
-    <div class="form-group">
-      <label for="password">Verify Password</label>
-      <input
-        type="password"
-        id="verify password"
-        class="form-control"
-        ngModel
-        name="verify password"
-        required
-        minlength="6"
-      />
-      <button type="button" class="btn btn-primary m-1" (click)="onSaveData()">
-        Submit
-      </button>
-    </div>
-  </div>
-</form>

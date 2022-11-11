@@ -17,12 +17,12 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="">Home</a>
         </li>
-        <li class="nav-item" *ngIf="isAuthenticated">
+        <li class="nav-item" *ngIf="isAuthenticated && user.role === 'parent' ">
           <a class="nav-link" style="cursor: pointer" routerLink="parent"
             >Parent Page</a
           >
         </li>
-        <li class="nav-item" *ngIf="isAuthenticated">
+        <li class="nav-item" *ngIf="isAuthenticated && user.role === 'child' ">
           <a class="nav-link" style="cursor: pointer" routerLink="child"
             >Child Page</a
           >
@@ -38,6 +38,11 @@
             style="cursor: pointer"
             routerLink="completed-chores"
             >Completed Chores</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="isAuthenticated && user.role === 'parent' ">
+          <a class="nav-link" style="cursor: pointer" routerLink="users"
+            >User List</a
           >
         </li>
         <li class="nav-item" *ngIf="isAuthenticated">

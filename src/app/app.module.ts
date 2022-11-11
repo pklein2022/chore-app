@@ -20,6 +20,8 @@ import { AlertComponent } from './shared/alert/alert/alert.component';
 import { PlaceHolderDirective } from './shared/placeholder/placeholder.directive';
 import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users/users.component';
+import { UserListComponent } from './users/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,9 @@ import { HomeComponent } from './home/home.component';
     AlertComponent,
     PlaceHolderDirective,
     HomeComponent,
+    UsersComponent,
+    UserListComponent,
+
   ],
   imports: [
     BrowserModule,

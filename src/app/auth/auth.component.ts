@@ -48,7 +48,7 @@ export class AuthComponent implements OnDestroy {
         console.log(resData);
         this.isLoading = false;
         this.dataStorageService.fetchChores().subscribe();
-        this.router.navigate(['/parent']);
+        this.router.navigate(['/chores']);
       },
       errorMessage => {
         console.log(errorMessage);
@@ -85,6 +85,9 @@ export class AuthComponent implements OnDestroy {
     }
     );
   }
+  storeUser() { }
+
+  onAddUser() { }
 }
 
 

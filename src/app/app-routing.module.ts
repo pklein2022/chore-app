@@ -8,17 +8,20 @@ import { ChoreEditComponent } from './chores/chore-edit/chore-edit.component';
 import { ChoreListComponent } from './chores/chore-list/chore-list.component';
 import { HomeComponent } from './home/home.component';
 import { ParentComponent } from './parent/parent.component';
+import { UserListComponent } from './users/user-list/user-list.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent , pathMatch: 'full' },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'chores', component: ChoreListComponent, resolve: [ChoresResolverService] },
   { path: 'chores/new', component: ChoreEditComponent },
   { path: 'chores/:id', component: ChoreDetailComponent, resolve: [ChoresResolverService] },
   { path: 'chores/:id/edit', component: ChoreEditComponent, resolve: [ChoresResolverService] },
   { path: 'parent', component: ParentComponent },
+  { path: 'users', component: UserListComponent },
+  { path: 'users/new', component: UsersComponent },
   { path: 'child', component: ChildComponent },
   { path: 'completed-chores', component: ChoreListComponent, resolve: [ChoresResolverService] },
-
 ];
 
 @NgModule({
