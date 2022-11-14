@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthComponent } from './auth/auth.component';
 import { ChildComponent } from './child/child.component';
 import { ChoresResolverService } from './chores-resolver.service';
 import { ChoreDetailComponent } from './chores/chore-detail/chore-detail.component';
@@ -8,8 +7,8 @@ import { ChoreEditComponent } from './chores/chore-edit/chore-edit.component';
 import { ChoreListComponent } from './chores/chore-list/chore-list.component';
 import { HomeComponent } from './home/home.component';
 import { ParentComponent } from './parent/parent.component';
+import { UserEditComponent } from './users/user-edit/user-edit.component';
 import { UserListComponent } from './users/user-list/user-list.component';
-import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -19,7 +18,8 @@ const routes: Routes = [
   { path: 'chores/:id/edit', component: ChoreEditComponent, resolve: [ChoresResolverService] },
   { path: 'parent', component: ParentComponent },
   { path: 'users', component: UserListComponent },
-  { path: 'users/new', component: UsersComponent },
+  { path: 'users/new', component: UserEditComponent },
+  { path: 'users/:id/edit', component: UserEditComponent },
   { path: 'child', component: ChildComponent },
   { path: 'completed-chores', component: ChoreListComponent, resolve: [ChoresResolverService] },
 ];

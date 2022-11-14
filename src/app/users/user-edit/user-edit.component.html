@@ -1,0 +1,74 @@
+<p>user-edit works!</p>
+
+<div class="container-md mt-5 mb-5">
+  <h3> {{ editMode ? "Edit" : "Add" }} User</h3>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmitUserForm()">
+    <div class="input-group mt-4">
+      <span class="input-group-text">First Name</span>
+      <input
+        type="text"
+        aria-label="First name"
+        class="form-control"
+        id="firstName"
+        formControlName="firstName"
+      />
+    </div>
+    <div class="input-group mt-4">
+      <span class="input-group-text">Last Name</span>
+      <input
+        type="text"
+        aria-label="Last name"
+        class="form-control"
+        id="lastName"
+        formControlName="lastName"
+        required
+      />
+    </div>
+    <div class="input-group mt-4">
+      <span class="input-group-text">Email</span>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        formControlName="email"
+        required
+        email
+      />
+    </div>
+    <div class="input-group mt-4">
+      <label class="input-group-text" for="inputGroupSelect01">User Role</label>
+      <select class="form-select" id="userRole" formControlName="userRole">
+        <option selected>Choose...</option>
+        <option value="parent">Parent</option>
+        <option value="child">Child</option>
+      </select>
+    </div>
+    <div class="input-group mt-4">
+      <span class="input-group-text">Password</span>
+      <input
+        type="password"
+        id="password"
+        class="form-control"
+        formControlName="password"
+        required
+        minlength="6"
+      />
+    </div>
+    <div class="input-group mt-4">
+      <span class="input-group-text">Verify Password</span>
+      <input
+        type="password"
+        id="verifyPassword"
+        class="form-control"
+        formControlName="verifyPassword"
+        required
+        minlength="6"
+      />
+    </div>
+    <div class="input-group mt-4">
+      <button type="submit" class="btn btn-primary m-1">
+        {{ editMode ? "Update" : "Add" }}
+      </button>
+    </div>
+  </form>
+</div>

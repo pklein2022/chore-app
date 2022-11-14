@@ -22,6 +22,7 @@ import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { UserListComponent } from './users/user-list/user-list.component';
+import { UserEditComponent } from './users/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { UserListComponent } from './users/user-list/user-list.component';
     HomeComponent,
     UsersComponent,
     UserListComponent,
+    UserEditComponent,
 
   ],
   imports: [

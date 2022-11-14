@@ -1,5 +1,5 @@
 <p>chore-edit works!</p>
-<h1>Chore Form</h1>
+<h1> {{ editMode ? "Edit" : "Add" }} Chore</h1>
 <form [formGroup]="choreForm" (ngSubmit)="onSubmitForm()">
   <div class="mb-3">
     <label for="name" class="form-label">Chore Name</label>

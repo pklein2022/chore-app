@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 import { DataStorageService } from '../shared/data-storage.service';
-import { User } from '../auth/user.model';
+import { User } from '../users/user.model';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private dataStorageService: DataStorageService,
     private authService: AuthService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.userSub = this.authService.user.subscribe((user) => {

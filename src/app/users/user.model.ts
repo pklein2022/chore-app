@@ -4,8 +4,10 @@ export class User {
     public id: string,
     public role?: string,
     private _token?: string,
-    private _tokenExpirationDate?: Date
-  ) { }
+    private _tokenExpirationDate?: Date,
+    public firstName?: string,
+    public lastName?: string,
+    ) { }
 
   get token() {
     if (!this._tokenExpirationDate || new Date() > this._tokenExpirationDate) {
