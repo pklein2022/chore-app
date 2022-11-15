@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
+import { UserService } from 'src/app/users/user.service';
 import { Chore } from '../chore.model';
 import { ChoreService } from '../chore.service';
 
@@ -11,10 +13,18 @@ import { ChoreService } from '../chore.service';
 export class ChoreListComponent implements OnInit {
   chores: Chore[];
   completedMode = false;
+userRole: string = '';
 
-  constructor(private choreService: ChoreService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private choreService: ChoreService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private userService: UserService,
+    private authService: AuthService,) { }
 
   ngOnInit(): void {
+
+this.userRole = this.userService.currentUser.role;
+console.log(this.userService.currentUser, "Coming from current user")
     console.log(this.router.url);
     if (this.router.url === '/completed-chores') {
       this.completedMode = true;

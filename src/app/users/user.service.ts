@@ -8,6 +8,8 @@ import { User } from './user.model';
 export class UserService {
   usersChanged = new Subject<User[]>();
 
+  currentUser: User |null = null;
+
   private users: User[] = [
     new User(
       "testuser@test.com",

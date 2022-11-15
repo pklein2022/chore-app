@@ -4,7 +4,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { BehaviorSubject, throwError } from 'rxjs';
 import { User } from '../users/user.model';
 import { Router } from '@angular/router';
-
+import { UserService } from '../users/user.service';
 export interface AuthResponseData {
   idToken: string;
   email: string;
@@ -20,7 +20,7 @@ export class AuthService {
   user = new BehaviorSubject<User>(null);
   private tokenExpirationTimer: any;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private userService: UserService) { }
 
   signup(email: string, password: string) {
     return this.http
@@ -130,6 +130,8 @@ export class AuthService {
     const user = new User(email, userId, userRole, token, expirationDate);
     console.log('Auth service', user);
     this.user.next(user);
+    this.userService.currentUser = user;
+
     this.autoLogout(expiresIn * 1000);
     localStorage.setItem('userData', JSON.stringify(user));
   }
