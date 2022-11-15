@@ -1,4 +1,14 @@
-<h1>{{ completedMode ? "Completed Chores" : "Chore List" }}</h1>
+<h1>
+  {{ completedMode ? "Completed Chores" : "Chore List" }}
+  <button
+    type="button"
+    class="btn btn-primary m-1 float-end"
+    routerLink="/chores/new"
+  >
+    Add Chore
+  </button>
+</h1>
+
 <div
   class="card mb-3"
   style="max-width: 100%"

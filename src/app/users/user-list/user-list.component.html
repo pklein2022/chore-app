@@ -1,6 +1,12 @@
 <p>User List Works</p>
 
-<h1>User List</h1>
+<h1>User List <button
+  type="button"
+  class="btn btn-primary m-1 float-end"
+  routerLink="/users/new"
+>
+  Add User
+</button></h1>
 <div
   class="card mb-3"
   style="max-width: 100%"
@@ -9,9 +15,9 @@
   <div class="row g-0">
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title" id="email">{{ user.email }} (Index: {{ i }})</h5>
-        <p class="card-text" id="firstName">{{ user.firstName }}</p>
-        <p class="card-text" id="lastName">{{ user.lastName }}</p>
+        <h5 class="card-title" id="email">Email:  {{ user.email }} </h5>
+        <p class="card-text" id="firstName">Name:  {{ user.firstName }} {{user.lastName}}</p>
+        <p class="card-text" id="role">Role:  {{ user.role }}</p>
         <p>
           <!-- <button
             type="button"
