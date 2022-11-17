@@ -15,7 +15,6 @@ export class ChoreListComponent implements OnInit {
   chores: Chore[];
   completedMode = false;
   userRole: string = '';
-  dataStorageService: any;
   choreAmountEarned: number = 0;
 
   constructor(private choreService: ChoreService,
@@ -23,7 +22,7 @@ export class ChoreListComponent implements OnInit {
     private router: Router,
     private userService: UserService,
     private authService: AuthService,
-    private dataService: DataStorageService) { }
+    private dataStorageService: DataStorageService) { }
 
   ngOnInit(): void {
 
