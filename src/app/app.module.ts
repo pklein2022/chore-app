@@ -11,7 +11,6 @@ import { ChoreDetailComponent } from './chores/chore-detail/chore-detail.compone
 import { ChoreEditComponent } from './chores/chore-edit/chore-edit.component';
 import { ChoreListComponent } from './chores/chore-list/chore-list.component';
 import { ParentComponent } from './parent/parent.component';
-import { ChildComponent } from './child/child.component';
 import { ChoreService } from './chores/chore.service';
 import { AuthService } from './auth/auth.service';
 import { AuthInterceptorService } from './auth/auth.interceptor.service';
@@ -33,7 +32,6 @@ import { UserEditComponent } from './users/user-edit/user-edit.component';
     ChoreEditComponent,
     ChoreListComponent,
     ParentComponent,
-    ChildComponent,
     AuthComponent,
     LoadingSpinnerComponent,
     AlertComponent,
@@ -42,7 +40,6 @@ import { UserEditComponent } from './users/user-edit/user-edit.component';
     UsersComponent,
     UserListComponent,
     UserEditComponent,
-
   ],
   imports: [
     BrowserModule,
