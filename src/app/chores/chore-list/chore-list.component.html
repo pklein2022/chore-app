@@ -4,6 +4,7 @@
     type="button"
     class="btn btn-primary m-1 float-end"
     routerLink="/chores/new"
+    *ngIf="this.userRole === 'parent'"
   >
     Add Chore
   </button>
