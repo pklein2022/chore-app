@@ -81,6 +81,14 @@ export class ChoreService {
     this.choresChanged.next(this.chores.slice());
     console.log(this.chores);
   }
+  getChoreAmountEarned(){
+    let chores = this.getCompletedChores();
+    let amount = 0;
+    for (let i = 0; i < chores.length; i++){
+      amount += +chores[i].amount;
+    }
+    return amount;
+  }
 }
 
 

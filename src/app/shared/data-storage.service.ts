@@ -31,6 +31,7 @@ export class DataStorageService {
           this.choreService.setChores(chores);
         })
       );
+
   }
   mapChore(chore: Chore, index: number) {
     return {
@@ -38,5 +39,5 @@ export class DataStorageService {
       id: index
     }
   }
- 
+
 }

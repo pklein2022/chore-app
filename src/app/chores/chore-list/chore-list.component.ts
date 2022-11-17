@@ -16,6 +16,7 @@ export class ChoreListComponent implements OnInit {
   completedMode = false;
   userRole: string = '';
   dataStorageService: any;
+  choreAmountEarned: number = 0;
 
   constructor(private choreService: ChoreService,
     private route: ActivatedRoute,
@@ -27,6 +28,7 @@ export class ChoreListComponent implements OnInit {
   ngOnInit(): void {
 
     this.userRole = this.userService.currentUser.role;
+
     console.log(this.userService.currentUser, "Coming from current user")
     console.log(this.router.url);
     if (this.router.url === '/completed-chores') {
@@ -34,6 +36,7 @@ export class ChoreListComponent implements OnInit {
     }
     if (this.completedMode) {
       this.chores = this.choreService.getCompletedChores();
+      this.getChoreAmountEarned();
     } else {
       this.chores = this.choreService.getNotCompletedChores();
     }
@@ -44,6 +47,7 @@ export class ChoreListComponent implements OnInit {
     this.choreService.deleteChore(id);
     if (this.completedMode) {
       this.chores = this.choreService.getCompletedChores();
+      this.getChoreAmountEarned();
     } else {
       this.chores = this.choreService.getNotCompletedChores();
     }
@@ -55,8 +59,12 @@ export class ChoreListComponent implements OnInit {
     this.choreService.completeChore(id);
     if (this.completedMode) {
       this.chores = this.choreService.getCompletedChores();
+      this.getChoreAmountEarned();
     } else {
       this.chores = this.choreService.getNotCompletedChores();
     }
+  }
+  getChoreAmountEarned() {
+    this.choreAmountEarned = this.choreService.getChoreAmountEarned();
   }
 }

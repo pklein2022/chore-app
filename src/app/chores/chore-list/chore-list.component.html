@@ -82,3 +82,8 @@
     </div>
   </div>
 </div>
+<div>
+  <h3 class="m-1 float-end" *ngIf="completedMode === true">
+    TOTAL EARNED: ${{ this.choreAmountEarned.toFixed(2) }}
+  </h3>
+</div>
